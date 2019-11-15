@@ -6,24 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
     <link rel="stylesheet" href="./views/css/main.css">
-    <script type='text/javascript' src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
-    <script src="./send.js"></script>
-    <script src="./views/scripts/jqeury/jquery-3.4.1.min.js"></script>
-    <script src="./views/scripts/bootstrap_js/bootstrap.js"></script>
+    <!--<script src="./views/scripts/jqeury/jquery-3.4.1.min.js"></script>-->
 </head>
-<body class="bg-sea">  
-    <div class="header">
+<body class="bg-sea">
+  <div class="header">
       <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark-blue border-yellow-wo shadow-lg">
         <h5 class="my-0 mr-md-auto font-weight-normal text-warning bottom border-primary" "><b>GuesTBooK</b></h5>
         <div class="col text-center">
           <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
-          <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
-          <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
-          <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
-        </nav>
+            <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
+            <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
+            <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
+            <a class="p-2 text-info" href="#"><b>Personal account</b></a>
+          </nav>
         </div>
-        <a class="btn btn-coral" href="./sing_up/sign_up.html"><b>Sign up</b></a>
+        <button type="button" class="btn btn-coral" data-toggle="modal" data-target="#regModalForm"><b>Sign up</b></button>
+        <div class="modal fade text-center" id="regModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-coral ">
+              <div class="modal-header">
+                <div class="container">
+                  <h5 class="modal-title display-4" id="exampleModalLongTitle">Аuthorization</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body bg-coral">
+                <form id="registry">
+                  <div class="container col-6 form-group">
+                    <label for="exampleInputEmail1">User name</label>
+                    <input type="nickname" name="nickname" class="form-control border-dark" id="nameReg" aria-describedby="emailHelp" placeholder="Nickname">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                  </div>
+                  <div class="container col-6 form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="mail" class="form-control border-dark" id="emailReg" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="container col-6 form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control border-dark" id="passReg" placeholder="Password">
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <div class="container col-3 text-center modal-footer">
+                    <button type="button" class="btn btn-dark-blue text-center" id="regPush">Save changes</button>
+                  </div>
+              </div>
+                </form>
+                <div id="errorMess"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="main">
@@ -64,19 +101,21 @@
                       <div class="row">
                         <div class="form-group col-md-6">
                           <label for="name" class="h4">Name</label>
-                          <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+                          <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" data-erorr="Запоните поле" required>
+                          <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group col-md-6 text-center">
                           <label for="email" class="h4">Email</label>
-                          <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                          <input type="email "name="email"  class="form-control" id="email" placeholder="Enter email" data-erorr="Запоните поле" required>
+                          <div class="help-block with-errors"></div>
                         </div>
                       </div>
                         <div class="form-group">
-                          <label for="message" class="h4 ">Message</label>
-                          <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+                          <label for="message" class="h4">Message</label>
+                          <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
                         </div>
-                        <button type="submit" id="form-submit" class="btn btn-coral btn-lg pull-right  ">Submit</button>
-                    <div id="msgSubmit" class="h3 text-center hidden">Message Submitted!</div>	 
+                        <button type="button" id="submit" class="btn btn-coral btn-lg pull-right">Submit</button>
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
                     </form>
                   </div>
             </div>
@@ -99,7 +138,18 @@
               <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
             </div>
       </footer>
-    </div>--> 
-</body>
+    </div>-->
+    <!---jQeury должен всегда подключаться первым при работе с bootstrap так, все плагины зависят от jQeury--->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./index_serv/ajax_script/reg_send.js"></script>
+    <script src="./index_serv/ajax_script/mes_send.js"></script>
+    <script src="./views/scripts/bootstrap_js/bootstrap.js"></script>
+    <!--
+    <script src="./views/scripts/bootstrap_js/bootstrap.js"></script>
+    <script src="./views/scripts/jqeury/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    -->
+    <!---<script type='text/javascript' src='https://code.jquery.com/jquery-3.4.1.min.js'></script>--->
+</body>   
 </html>
     
