@@ -3,16 +3,13 @@
 $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
-/*
-echo ($nickname);
+
+echo ($message);
 /*
 $subject = "=?utf-8?B?".base_encode("Message c site")."?=";
 $headers = "From: $email\r\nReply-on: $email\r\n\Content-type text/html; charset=utf-8\r\n";
 */
-// соединение с БД
-$my_connect = mysqli_connect('localhost', 'root', '', 'guest_list');
-/*print_r($my_connect);*/
-if (!$my_connect) die("Error");
+include('connection.php');
 /*
 mysqli_select_db("reg_user", $my_connect);*/
 // запрос В БД

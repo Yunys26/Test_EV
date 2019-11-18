@@ -10,16 +10,51 @@
 </head>
 <body class="bg-sea">
   <div class="header">
-      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark-blue border-yellow-wo shadow-lg">
-        <h5 class="my-0 mr-md-auto font-weight-normal text-warning bottom border-primary" "><b>GuesTBooK</b></h5>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark-blue border-yellow-wo shadow-lg">
+      <h5 class="my-0 mr-md-auto font-weight-normal text-warning bottom border-primary" "><b>GuesTBooK</b></h5>
         <div class="col text-center">
           <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
             <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
-            <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
+            <!--Модальное окно вывода всех данных-->
+            <a class="p-2 text-lite-blue" data-toggle="modal" data-target="#exampleModal"><b>Pricing</b></a>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="info">
+                            <div class="container">
+                              <div class="row">
+                                <form id="table">
+                                  <div class="col-lg border-dark shadow-lg text-center ">
+                                    <div class="col-6">
+                                      <label for="name text-center"><h4>Table</h4></label>
+                                      <div id="look_table_info"></div>
+                                    </div>
+                                    <button type="button" id="table_look" class="btn btn-coral btn-lg pull-right" onclick="allInfo();">GOOOO</button>
+                                  </div>
+                                </form>  
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <a class="p-2 text-info" href="#"><b>Personal account</b></a>
           </nav>
         </div>
+        <!--Модальное окно регистрации-->
         <button type="button" class="btn btn-coral" data-toggle="modal" data-target="#regModalForm"><b>Sign up</b></button>
         <div class="modal fade text-center" id="regModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -53,7 +88,7 @@
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                   </div>
                   <div class="container col-3 text-center modal-footer">
-                    <button type="button" class="btn btn-dark-blue text-center" id="regPush">Save changes</button>
+                    <button type="button" class="btn btn-dark-blue text-center" id="regPush" onclick="regSend();">Save changes</button>
                   </div>
               </div>
                 </form>
@@ -95,43 +130,35 @@
         <div class="conainter">
           <div class="row">
             <div class="col-6">
-                <div class="col-md-6 col-md-offset-3">
-                    <h4 class="text-center">Send me a message</h4>
-                    <form role="form" id="contactForm">
-                      <div class="row">
-                        <div class="form-group col-md-6">
-                          <label for="name" class="h4">Name</label>
-                          <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" data-erorr="Запоните поле" required>
-                          <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group col-md-6 text-center">
-                          <label for="email" class="h4">Email</label>
-                          <input type="email "name="email"  class="form-control" id="email" placeholder="Enter email" data-erorr="Запоните поле" required>
-                          <div class="help-block with-errors"></div>
-                        </div>
-                      </div>
-                        <div class="form-group">
-                          <label for="message" class="h4">Message</label>
-                          <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
-                        </div>
-                        <button type="button" id="submit" class="btn btn-coral btn-lg pull-right">Submit</button>
-                    <div id="msgSubmit" class="h3 text-center hidden"></div>
-                    </form>
+              <div class="col-md-6 col-md-offset-3">
+                <h4 class="text-center">Send me a message</h4>
+                <form role="form" id="contactForm">
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="name" class="h4">Name</label>
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" data-erorr="Запоните поле" required>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="email" class="h4">Email</label>
+                      <input type="email "name="email"  class="form-control" id="email" placeholder="Enter email" data-erorr="Запоните поле" required>
+                      <div class="help-block with-errors"></div>
+                    </div>
                   </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-
+                      <div class="form-group">
+                        <label for="message" class="h4">Message</label>
+                        <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+                      </div>
+                        <button type="button" id="submit" class="btn btn-coral btn-lg pull-right" onclick="messageSend();">Submit</button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                  </form>
               </div>
             </div>
-              
-          </div>
-          <div>
-            
           </div>
         </div>
       </div>
     </div>
+
 <!---   <div class="basement">
       <footer class="page-footer fixed-bottom font-small blue shadow-lg">
           <div class="footer-copyright text-center py-3">© 2018 Copyright:
@@ -141,8 +168,7 @@
     </div>-->
     <!---jQeury должен всегда подключаться первым при работе с bootstrap так, все плагины зависят от jQeury--->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./index_serv/ajax_script/reg_send.js"></script>
-    <script src="./index_serv/ajax_script/mes_send.js"></script>
+    <script src="./index_serv/ajax_script/send_forms.js"></script>
     <script src="./views/scripts/bootstrap_js/bootstrap.js"></script>
     <!--
     <script src="./views/scripts/bootstrap_js/bootstrap.js"></script>
