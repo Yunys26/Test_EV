@@ -91,13 +91,13 @@ function messageSend ()
                 console.log(data);
                 $("#submit").prop("disabled", false);
             }  
-        })
+        });
     
         $('#name').val('');
         $('#email').val('');
         $('#message').val('');
     });
-}
+};
 /*
 $("#contactForm").submit(function(event){
     // cancels the form submission
@@ -189,4 +189,36 @@ function allInfo ()
             })
         })
     })
-}
+};
+
+function signIn () {
+    $(document).ready(function() {
+        $('#sign_in').on('click', function() {
+
+            let email = $('#inputEmail').val().trim();
+            let password = $('#inputPassword').val().trim();
+            
+            $.ajax({
+                type: "POST",
+                url: "/index_serv/sql_query/sign_in.php",
+                data: {'email': email, 'password': password},
+                dataType: 'html',
+                beforeSend: function() {
+                    $("#sign_in").prop("disabled", true);
+                },
+                success: function(data) {
+                    if(!data){
+                        console.log("error")
+                    }else {
+                        console.log(data);
+                    $("#sign_in").prop("disabled", false);
+                    }
+                    
+                }
+            });
+
+            $('#inputEmail').val('');
+            $('#inputPassword').val('');
+        })
+    })
+};

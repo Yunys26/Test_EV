@@ -1,10 +1,12 @@
 <?php
-
+// Соединение с бд
 include("connection.php");
+// Выбор таблицы send_user
 mysqli_select_db($my_connect, "send_user");
+// Запрос в таблицу send_user
 $result = mysqli_query( $my_connect, "SELECT * FROM send_user");
-
-echo "<table border='1' >
+// Вывод данных
+echo "<table border='1'>
 <tr> 
 <td align=center> <b>Name</b></td>
 <td align=center><b>Email</b></td>
@@ -19,36 +21,6 @@ while($data = mysqli_fetch_row($result))
     echo "</tr>";
 }
 echo "</table>";
-/*
-  $host = "localhost";
-  $user = "root";
-  $pass = "root";
-
-  $databaseName = "guest_list";
-  $tableName = "send_user";
-
-  // ------------------------------------------------ --------------------------
-  // 1) Подключение к базе данных MySQL
-  // ------------------------------------------------ --------------------------
-
-    $my_connect = mysqli_connect($host, $user, '', $databaseName);
-    echo $my_connect;
-    $sel = mysqli_select_db($my_connect, $tableName);
-
-  // ------------------------------------------------ --------------------------
-  // 2) Запрос базы данных для данных
-  // ------------------------------------------------ --------------------------
-  $result = mysql_query ("SELECT * FROM $tableName"); // запрос
-  $array = mysql_fetch_row ($result); // получить результат    
-
-  // ------------------------------------------------ --------------------------
-  // 3) результат эха как json 
-  // ------------------------------------------------ --------------------------
-  echo json_encode ($array);
-
-
-
-
 /*
 $sdd_db_host='localhost'; // ваш хост
 $sdd_db_name='guest_list'; // ваша бд

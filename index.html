@@ -14,7 +14,13 @@
       <h5 class="my-0 mr-md-auto font-weight-normal text-warning bottom border-primary" "><b>GuesTBooK</b></h5>
         <div class="col text-center">
           <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
+            <div class="btn-group">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                
+              </ul>
+            </div>
+            <a class="p-2 text-lite-blue" href="./sing_in/sign_in.html"><b>sing in</b></a>
             <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
             <!--Модальное окно вывода всех данных-->
             <a class="p-2 text-lite-blue" data-toggle="modal" data-target="#exampleModal"><b>Pricing</b></a>
@@ -109,27 +115,19 @@
     </div>
     <div class="content">
         <div class="container-fuild">
-          <div class="row ">
+          <div class="row">
             <div class="col shadow-lg">
-              <hr><h3 class="display-5 text-center">Оставить отзыв</h3><hr>
-              
-              <div class="text-center">
-                <h4 class="text-center">Send me a message</h4>
-                <!---<a class="btn btn-outline-primary" href="#"><em>hello world</em></a>--->
-              </div>
+              <h3 class="display-5 text-center">Оставить отзыв</h3>
             </div>
-            <div class="col shadow-lg">
-              <hr><h3 class="display-5 text-center">Просмотр отзывов</h3><hr>
-              <div class="text-center">
-                <a class="btn btn-outline-primary" href="#"><em>hello world</em>12</a>
-              </div>
+            <div class="col col-lg shadow-lg">
+              <h3 class="display-5 text-center">Отредактировать свой отзыв</h3>
             </div>
           </div>  
         </div>
       <div class="send">
         <div class="conainter">
           <div class="row">
-            <div class="col-6">
+            <div class="col">
               <div class="col-md-6 col-md-offset-3">
                 <h4 class="text-center">Send me a message</h4>
                 <form role="form" id="contactForm">
@@ -145,13 +143,22 @@
                       <div class="help-block with-errors"></div>
                     </div>
                   </div>
-                      <div class="form-group">
+                      <div class="form-group col-md-6">
                         <label for="message" class="h4">Message</label>
                         <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
                       </div>
                         <button type="button" id="submit" class="btn btn-coral btn-lg pull-right" onclick="messageSend();">Submit</button>
                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                   </form>
+              </div>
+              <div class="col-md-6 col-md-offset-3">
+                <h4 class="text-center">Ваш отзыв</h4>
+                <form role="form" id="mesrename">
+                  <div class="row">
+                    <label for="mes" class="h4"></label>
+                    <input type="text" class="form-control" id="mes">
+                  </div>
+                </form>
               </div>
             </div>
           </div>
