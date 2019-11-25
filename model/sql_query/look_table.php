@@ -4,11 +4,12 @@ include("connection.php");
 // Выбор таблицы send_user
 mysqli_select_db($my_connect, "send_user");
 // Запрос в таблицу send_user
-$result = mysqli_query( $my_connect, "SELECT * FROM send_user");
+$result = mysqli_query( $my_connect, "SELECT * FROM users");
 // Вывод данных
 echo "<table border='1'>
 <tr> 
-<td align=center> <b>Name</b></td>
+<td align=center> <b>id</b></td>
+<td align=center><b>Name</b></td>
 <td align=center><b>Email</b></td>
 <td align=center><b>Message</b></td>";
 

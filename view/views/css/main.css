@@ -38,7 +38,20 @@
 *::before,
 *::after {
   box-sizing: border-box; }
-
+/*main*/
+/* анимированные градиент*/
+.gradient {
+   width: auto;
+   height: auto;
+   padding: 0px;
+   margin: 0px;
+  }
+/*специальный шрифт для текста разрабочика*/
+.shadow-into-light{
+  font-size: 250%;
+  font-family: 'Shadows Into Light', cursive;
+}
+/*main*/
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -135,7 +148,8 @@ a {
   background-color: transparent; }
   a:hover {
     color: #0056b3;
-    text-decoration: underline; }
+    text-decoration: none;
+    /*text-decoration: underline;*/ }
 
 a:not([href]):not([tabindex]) {
   color: inherit;

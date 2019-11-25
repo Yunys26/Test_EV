@@ -24,7 +24,7 @@ function regSend ()
     $("#errorMess").text("")
     /*Ajax jQeury */
     $.ajax({
-        url: '/index_serv/sql_query/reg_send.php',
+        url: '/model/sql_query/reg_send.php',
         type: 'POST',
         cache: false,
         data: {'nickname': nickname, 'email': email, 'password': password },
@@ -79,7 +79,7 @@ function messageSend ()
         let message = $('#message').val();
     
         $.ajax({
-            url: '/index_serv/sql_query/mes_send.php',
+            url: '/model/sql_query/mes_send.php',
             type: 'POST',
             cache: false,
             data: {'name': name, 'email': email, 'message': message},
@@ -176,7 +176,7 @@ function allInfo ()
         $('#table_look').on('click', function() {
             $.ajax({
                 type: "GET",
-                url: "/index_serv/sql_query/look_table.php",
+                url: "/model/sql_query/look_table.php",
                 dataType: "html",
                 success: function(response) {
                     if (!($('#look_table_info').html(response))) console.log("Error 404")
@@ -200,7 +200,7 @@ function signIn () {
             
             $.ajax({
                 type: "POST",
-                url: "/index_serv/sql_query/sign_in.php",
+                url: "/model/sql_query/sign_in.php",
                 data: {'email': email, 'password': password},
                 dataType: 'html',
                 beforeSend: function() {

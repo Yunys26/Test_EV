@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
-    <link rel="stylesheet" href="./views/css/main.css">
+    <link rel="stylesheet" href="./view/views/css/main.css">
     <!--<script src="./views/scripts/jqeury/jquery-3.4.1.min.js"></script>-->
 </head>
+<!--<body class="bg-sea">--->
 <body class="bg-sea">
   <div class="header">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark-blue border-yellow-wo shadow-lg">
-      <h5 class="my-0 mr-md-auto font-weight-normal text-warning bottom border-primary" "><b>GuesTBooK</b></h5>
+      <a class="my-0 mr-md-auto font-weight-normal text-warning bottom border-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>GuesTBooK<span class="caret"></span></b></a>
+      <div class="btn-grop">
+        <ul class="dropdown-menu border-warning text-center">
+            <a class="dropdown-item-sm badge-pill badge-warning" href="#"><b>Account</b></a>
+            <div class="dropdown-divider border-warning"></div>
+            <a class="dropdown-item-sm badge-pill badge-warning" href="view/sing_in/sign_in.html"><b>sign in</b></a>
+            <div class="dropdown-divider border-warning"></div>
+            <a class="dropdown-item-sm badge-pill badge-warning" href="#"><b>Exit</b></a>
+        </ul>
+      </div>
         <div class="col text-center">
           <nav class="my-2 my-md-0 mr-md-3">
-            <div class="btn-group">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                
-              </ul>
-            </div>
-            <a class="p-2 text-lite-blue" href="./sing_in/sign_in.html"><b>sing in</b></a>
-            <a class="p-2 text-lite-blue" href="#"><b>Pricing</b></a>
+            <a class="p-2 badge badge-pill badge-warning" href="view/sing_in/sign_in.html"><b>sing in</b></a>
+            <a class="p-2 badge badge-pill badge-info" href="#"><b>Pricing</b></a>
             <!--Модальное окно вывода всех данных-->
-            <a class="p-2 text-lite-blue" data-toggle="modal" data-target="#exampleModal"><b>Pricing</b></a>
+            <a class="p-2 badge badge-pill badge-warning" data-toggle="modal" data-target="#exampleModal"><b>Pricing</b></a>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -57,11 +61,11 @@
                   </div>
                 </div>
               </div>
-            <a class="p-2 text-info" href="#"><b>Personal account</b></a>
+            <a class="p-2 badge badge-pill badge-info" href="#"><b>Personal account</b></a>
           </nav>
         </div>
         <!--Модальное окно регистрации-->
-        <button type="button" class="btn btn-coral" data-toggle="modal" data-target="#regModalForm"><b>Sign up</b></button>
+        <button type="button" class="btn gradient" data-toggle="modal" data-target="#regModalForm"><b>Sign up</b></button>
         <div class="modal fade text-center" id="regModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content bg-coral ">
@@ -102,18 +106,18 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
-    <div class="main">
-      <div class="container-fuild border-primary"">
+  </div>
+  <div class="main">
+      <div class="container-fuild border-primary">
         <div class="pricing-header mx-auto text-center bg-dr1 text-body border-yellow-wo shadow-lg">
         <h1 class="display-4">Pricing</h1>
         <p class="lead ">Quickly build an effective pricing table for your apotential customers with this Bootstrap example.</p>
         <p class="lead">It’s built with default Bootstrap components and utilities with little customization.</p>
       </div>
-    </div>
-    </div>
-    <div class="content">
+      </div>
+  </div>
+  <div class="content">
         <div class="container-fuild">
           <div class="row">
             <div class="col shadow-lg">
@@ -164,7 +168,7 @@
           </div>
         </div>
       </div>
-    </div>
+  </div>
 
 <!---   <div class="basement">
       <footer class="page-footer fixed-bottom font-small blue shadow-lg">
@@ -175,9 +179,12 @@
     </div>-->
     <!---jQeury должен всегда подключаться первым при работе с bootstrap так, все плагины зависят от jQeury--->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./index_serv/ajax_script/send_forms.js"></script>
-    <script src="./views/scripts/bootstrap_js/bootstrap.js"></script>
-    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="./model/ajax_script/send_forms.js"></script>
+    <script src="view/account/ac.js"></script>
+    <script src="./view/views/scripts/bootstrap_js/bootstrap.bundle.js"></script>
+    <script src="./view/views/scripts/bootstrap_js/bootstrap.bundle.min.js"></script>
+    <!--<script src="./view/views/scripts/bootstrap_js/bootstrap.js"></script>
     <script src="./views/scripts/bootstrap_js/bootstrap.js"></script>
     <script src="./views/scripts/jqeury/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
